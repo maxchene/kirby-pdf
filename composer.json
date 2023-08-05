@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Maxchene\\Pdf\\": "src/"
+            "Maxchene\\KirbyPdf\\": "src/"
         }
     },
     "config": {
