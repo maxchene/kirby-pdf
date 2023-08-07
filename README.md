@@ -48,7 +48,7 @@ Here is a quick example of how you can use page to PDF in your template:
 ```html
 <h1>Guacamole recipe</h1>
 
-<a href="<?= $page->pdfUrl();?>">
+<a href="<?= $page->pdfUrl();?>" target="_blank">
     Here is a link to pdf file, will open in new browser tab
 </a>
 
