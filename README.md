@@ -29,8 +29,8 @@ This is an example with a ``recipe`` page template :
 ├── snippets
 ├── templates
 │   ├── pdf
-│   │   ├── recipe.php <- used to render the PDF file
-│   ├── recipe.php   <- used to render the HTML page
+│   │   ├── recipe.php   <- used to render the PDF file
+│   ├── recipe.php       <- used to render the HTML page
 ```
 
 So, in the ``templates/pdf/recipe.php``, you can use a totally different layout and css to render the PDF file.
