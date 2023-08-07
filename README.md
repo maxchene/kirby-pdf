@@ -41,3 +41,24 @@ This is an example with a ``recipe`` page template :
 
 So, in the ``templates/pdf/recipe.php``, you can use a totally different layout and css to render the PDF file.
 
+## How to use in your templates
+
+Here is a quick example of how you can use page to PDF in your template:
+
+```html
+<h1>Guacamole recipe</h1>
+
+<a href="<?= $page->pdfUrl();?>">
+    Here is a link to pdf file, will open in new browser tab
+</a>
+
+
+<a href="<?= $page->pdfUrl();?>" download="my-pdf-filename.pdf">
+    This will force PDF download with provided filename
+</a>
+```
+
+## TODO
+
+- Add more PDF engines
+- Allow users to disable PDF rendering by page template
