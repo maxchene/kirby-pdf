@@ -6,11 +6,11 @@ This plugin allow you to choose a PDF engine to render HTML as PDF.
 
 ### Rendering with current template
 
-This is the simplest render. PDF engine will parse the current page with her current template and to render the PDF
+This is the simplest render. PDF engine will parse the current page with her current template and css to render the PDF
 file.
 
 For this rendering, you might want to use [print media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/@media)
-to fit your needs.
+ and [page media query](https://developer.mozilla.org/fr/docs/Web/CSS/@page) to fit your needs.
 
 ### Dedicated pdf template
 
