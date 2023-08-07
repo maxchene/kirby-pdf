@@ -2,27 +2,38 @@
 @include_once __DIR__ . '/vendor/autoload.php';
 
 use Kirby\Cms\App;
-use Kirby\Cms\Page;
 use Kirby\Cms\Response;
+use Kirby\Template\Template;
 use Maxchene\KirbyPdf\Engine\WkHtmlToPdfEngine;
 
 
 App::plugin('maxchene/kirby-pdf', [
+    'options' => [
+        'engine' => 'WkHtmlToPdf',
+        'margin' => [
+            'bottom' => 10,
+            'left' => 10,
+            'right' => 10,
+            'top' => 10,
+        ],
+        'orientation' => 'portrait'
+    ],
     'routes' => [
         [
             'pattern' => '(:all).pdf',
             'action' => function (string $all) {
                 $page = page($all);
-                /**
-                 * TODO
-                 * Check if a specific pdf template is set in
-                 * templates/pdf/template-name
-                 */
-                $clone = $page->clone(['template' => 'pdf']);
-                $html = $clone->render();
+                $currentTemplate = $page->template()->name();
+                $pdfTemplate = new Template('pdf/' . $currentTemplate);
+
+                if ($pdfTemplate->exists()) {
+                    $page = $page->clone(['template' => $pdfTemplate->name()]);
+                }
+
+                $html = $page->render();
                 $pdf = new WkHtmlToPdfEngine();
-                $out = $pdf->output($html);
-                return new Response($out, 'application/pdf');
+                $output = $pdf->output($html);
+                return new Response($output, 'application/pdf');
             }
         ]
     ],
