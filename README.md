@@ -2,6 +2,12 @@
 
 This plugin allow you to choose a PDF engine to render HTML as PDF.
 
+## WIP
+
+For now this plugin is only working with [WkHtmlToPdf](https://wkhtmltopdf.org/) installed on your server.
+
+More engines will be coming soon: tcpdf, dompdf, mpdf.
+
 ## Rendering
 
 ### Rendering with current template
@@ -10,7 +16,7 @@ This is the simplest render. PDF engine will parse the current page with her cur
 file.
 
 For this rendering, you might want to use [print media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/@media)
- and [page media query](https://developer.mozilla.org/fr/docs/Web/CSS/@page) to fit your needs.
+and [page media query](https://developer.mozilla.org/fr/docs/Web/CSS/@page) to fit your needs.
 
 ### Dedicated pdf template
 
