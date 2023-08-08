@@ -47,7 +47,7 @@ To configure kirby pdf plugin, add a ``maxchene.kirbypdf``
 entry in your ``site/config/config.php``
 
 ````php
-'maxchene.kirbypdf' => [
+'maxchene.kirby-pdf' => [
     'margin' => [
         'bottom' => 10,         // margins unit is millimeter(mm)
         'left' => 10,
