@@ -42,12 +42,16 @@ class KirbyPdf
     protected function buildOptions(): void
     {
         $this->setOrientation(option('maxchene.kirby-pdf.orientation'));
-        $this->setEngine(new WkHtmlToPdfEngine($this));
         $this->setMarginBottom(option('maxchene.kirby-pdf.margin.bottom'));
         $this->setMarginLeft(option('maxchene.kirby-pdf.margin.left'));
         $this->setMarginRight(option('maxchene.kirby-pdf.margin.right'));
         $this->setMarginTop(option('maxchene.kirby-pdf.margin.top'));
 
+
+        $engineName = option('maxchene.kirby-pdf.engine');
+        $engineClass = sprintf("\Maxchene\KirbyPdf\Engine\%sEngine", $engineName);
+        $engine = new $engineClass($this);
+        $this->setEngine($engine);
     }
 
     /**
