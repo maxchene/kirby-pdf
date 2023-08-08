@@ -8,6 +8,12 @@ For now this plugin is only working with [WkHtmlToPdf](https://wkhtmltopdf.org/)
 
 More engines will be coming soon: tcpdf, dompdf, mpdf.
 
+## Installation
+
+Download and copy this repository into ``site/plugins/pdf``
+
+Or use composer : ``composer require maxchene/kirby-pdf``
+
 ## Rendering
 
 ### Rendering with current template
