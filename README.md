@@ -60,6 +60,8 @@ entry in your ``site/config/config.php``
 
 Orientation can be either ``portrait`` or ``landscape``, default is portrait.
 
+Note that margins are in millimeters (mm).
+
 ## How to use in your templates
 
 Here is a quick example of how you can use page to PDF in your template:
