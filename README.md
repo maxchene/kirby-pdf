@@ -41,6 +41,25 @@ This is an example with a ``recipe`` page template :
 
 So, in the ``templates/pdf/recipe.php``, you can use a totally different layout and css to render the PDF file.
 
+## Configuration
+
+To configure kirby pdf plugin, add a ``maxchene.kirbypdf``
+entry in your ``site/config/config.php``
+
+````php
+'maxchene.kirbypdf' => [
+    'margin' => [
+        'bottom' => 10,
+        'left' => 10,
+        'right' => 10,
+        'top' => 10,
+    ],
+    'orientation' => 'portrait'
+]
+````
+
+Orientation can be either ``portrait`` or ``landscape``, default is portrait.
+
 ## How to use in your templates
 
 Here is a quick example of how you can use page to PDF in your template:
@@ -49,12 +68,12 @@ Here is a quick example of how you can use page to PDF in your template:
 <h1>Guacamole recipe</h1>
 
 <a href="<?= $page->pdfUrl();?>" target="_blank">
-    Here is a link to pdf file, will open in new browser tab
+  Here is a link to pdf file, will open in new browser tab
 </a>
 
 
 <a href="<?= $page->pdfUrl();?>" download="my-pdf-filename.pdf">
-    This will force PDF download with provided filename
+  This will force PDF download with provided filename
 </a>
 ```
 
