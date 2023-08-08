@@ -3,7 +3,6 @@
 
 use Kirby\Cms\App;
 use Kirby\Cms\Response;
-use Kirby\Template\Template;
 use Maxchene\KirbyPdf\KirbyPdf;
 
 
