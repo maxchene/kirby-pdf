@@ -253,6 +253,7 @@ class KirbyPdf
         }
 
         $this->setHtml($page->render());
+        $this->setTitle($page->title()->value());
         return $this;
     }
 
