@@ -49,12 +49,12 @@ entry in your ``site/config/config.php``
 ````php
 'maxchene.kirbypdf' => [
     'margin' => [
-        'bottom' => 10,
+        'bottom' => 10,         // margins unit is millimeter(mm)
         'left' => 10,
         'right' => 10,
         'top' => 10,
     ],
-    'orientation' => 'portrait'
+    'orientation' => 'portrait' //either 'portrait' or 'landscape'
 ]
 ````
 
