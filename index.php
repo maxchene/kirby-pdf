@@ -4,7 +4,7 @@
 use Kirby\Cms\App;
 use Kirby\Cms\Response;
 use Kirby\Template\Template;
-use Maxchene\KirbyPdf\Engine\WkHtmlToPdfEngine;
+use Maxchene\KirbyPdf\KirbyPdf;
 
 
 App::plugin('maxchene/kirby-pdf', [
@@ -23,16 +23,10 @@ App::plugin('maxchene/kirby-pdf', [
             'pattern' => '(:all).pdf',
             'action' => function (string $all) {
                 $page = page($all);
-                $currentTemplate = $page->template()->name();
-                $pdfTemplate = new Template('pdf/' . $currentTemplate);
-
-                if ($pdfTemplate->exists()) {
-                    $page = $page->clone(['template' => $pdfTemplate->name()]);
-                }
-
-                $html = $page->render();
-                $pdf = new WkHtmlToPdfEngine();
-                $output = $pdf->output($html);
+                $pdf = new KirbyPdf();
+                $output = $pdf
+                    ->setPage($page)
+                    ->output();
                 return new Response($output, 'application/pdf');
             }
         ]

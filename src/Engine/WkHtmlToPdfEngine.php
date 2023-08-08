@@ -3,19 +3,25 @@
 namespace Maxchene\KirbyPdf\Engine;
 
 use Kirby\Exception\Exception;
+use Maxchene\KirbyPdf\KirbyPdf;
 
-class WkHtmlToPdfEngine
+class WkHtmlToPdfEngine extends AsbtractPdfEngine
 {
 
     protected string $_binary = 'wkhtmltopdf';
 
+    public function __construct(KirbyPdf $pdf)
+    {
+        parent::__construct($pdf);
+    }
+
     /**
      * @throws Exception
      */
-    public function output(string $htmlContent): string
+    public function output(): string
     {
         $command = $this->getCommand();
-        $content = $this->exec($command, $htmlContent);
+        $content = $this->exec($command, $this->pdf->getHtml());
 
         if (!empty($content['stdout'])) {
             return $content['stdout'];
